@@ -19,7 +19,9 @@ une action doit retourner un objet
 }
 */
 
-
+var Zone = {
+  type : "feu"  
+};
 
 
 
