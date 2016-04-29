@@ -142,8 +142,8 @@ dragon.force = 20;
 dragon.gentillesse = 5;
 
 var position = new Object();
-position.x = 2;
-position.y = 2;
+position.x = 1;
+position.y = 1;
 
 var  choisirAction = function(){
     var solution = prompt("Vous vous promenez, puis soudain, un dragon surgit de nulle part. Vous avez 3 solutions, soit COURIR, soit vous BATTRE, ou sinon, la plus compliquée, l'APPRIVOISER.").toUpperCase();
