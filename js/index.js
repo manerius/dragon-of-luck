@@ -141,6 +141,10 @@ dragon.vitesse = 12;
 dragon.force = 20;
 dragon.gentillesse = 5;
 
+var map = [["nuage","polaire","caverne"],
+           ["mer","forêt","montagne"],
+           ["jungle","desert","volcan"]];
+
 
 var  choisirAction = function(){
     var solution = prompt("Vous vous promenez, puis soudain, un dragon surgit de nulle part. Vous avez 3 solutions, soit COURIR, soit vous BATTRE, ou sinon, la plus compliquée, l'APPRIVOISER.").toUpperCase();
