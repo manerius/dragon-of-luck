@@ -141,10 +141,64 @@ dragon.vitesse = 12;
 dragon.force = 20;
 dragon.gentillesse = 5;
 
+var position = new Object();
+position.x = 1;
+position.y = 1;
+
 var map = [["nuage","polaire","caverne"],
            ["mer","forêt","montagne"],
            ["jungle","desert","volcan"]];
-
+           
+var direction = function() {
+    var quelle_direction = prompt("Dans quelle direction veux-tu partir ? Le NORD ,le SUD,l'EST,l'OUEST,le NORD-EST,le NORD-OUEST ou le SUD-EST,le SUD-OUEST.","Mettre les tirets.").toUpperCase();
+    while((quelle_direction != "NORD")
+       && (quelle_direction != "SUD")
+       && (quelle_direction != "EST")
+       && (quelle_direction != "NORD")
+       && (quelle_direction != "OUEST")
+       && (quelle_direction != "NORD-EST")
+       && (quelle_direction != "NORD-OUEST")
+       && (quelle_direction != "SUD-EST")
+       && (quelle_direction != "SUD-OUEST")) {
+        console.log("Vous n'avez pas donner la réponse qui fallait.");
+        quelle_direction = prompt("Il faut donner, le NORD ,le SUD, l'EST, l'OUEST, le NORD-EST, le NORD-OUEST ,le SUD-EST ou le SUD-OUEST.").toUpperCase(); 
+    }
+    if(quelle_direction === "NORD") {
+        position.y = 0;
+        console.log("Tu es dans l'environnement polaire.");
+    }
+    else if(quelle_direction === "SUD") {
+        position.y = 2;
+        console.log("Tu es dans le désert.");
+    }
+    else if(quelle_direction === "EST") {
+        position.x = 2;
+        console.log("Tu es dans les montagnes.");
+    }
+    else if(quelle_direction === "OUEST") {
+        position.x = 0;
+        console.log("Tu es à la mer.");
+    }
+    else if(quelle_direction === "NORD-EST") {
+        position.x = 0;
+        position.y = 0;
+        console.log("Tu es dans une caverne.");
+    }
+    else if(quelle_direction === "NORD-OUEST") {
+        position.x = 0;
+        position.y = 0;
+        console.log("Tu es dans les nuages.");
+    }
+    else if(quelle_direction === "SUD-EST") {
+        position.x = 2;
+        position.y = 2;
+        console.log("Tu es sur le volcan.");
+    } else {
+        position.x = 0;
+        position.y = 2;
+        console.log("Tu es dans la jungle.");
+    }
+};
 
 var  choisirAction = function(){
     var solution = prompt("Vous vous promenez, puis soudain, un dragon surgit de nulle part. Vous avez 3 solutions, soit COURIR, soit vous BATTRE, ou sinon, la plus compliquée, l'APPRIVOISER.").toUpperCase();
